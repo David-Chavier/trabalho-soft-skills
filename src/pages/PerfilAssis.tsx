@@ -1,21 +1,19 @@
 import {
   Avatar,
-  Button,
   Container,
   Divider,
   Grid,
   Paper,
   Typography,
 } from "@mui/material";
-import React, { useMemo } from "react";
-import { devs } from "../database/devs";
-import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
-import { useNavigate } from "react-router-dom";
+import React from "react";
 import ReturnButton from "../components/ReturnButton/ReturnButton";
 import MenuAppBar from "../components/AppBar/AppBar";
+import { devs } from "../database/devs";
 
 const PerfilAssis: React.FC = () => {
-  const navigate = useNavigate();
+  const user = devs.find(dev => dev.name === 'Assis');
+  
   return (
     <React.Fragment>
       <Grid item xs={12}>
@@ -30,7 +28,7 @@ const PerfilAssis: React.FC = () => {
               sx={{
                 height: 300,
                 backgroundImage:
-                  "url(https://images.unsplash.com/photo-1515704089429-fd06e6668458?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80)",
+                  `url(${user?.banner})`,
                 backgroundPosition: "center",
                 backgroundSize: "cover",
               }}
@@ -47,8 +45,8 @@ const PerfilAssis: React.FC = () => {
             zIndex={999}
           >
             <Avatar
-              alt="Assis Junior"
-              src="https://th.bing.com/th/id/OIP.XSZAFm-5JI7nriDLwZqRQQHaE7?pid=ImgDet&rs=1"
+              alt={user?.name}
+              src={user?.foto}
               sx={{
                 width: "40vh",
                 height: "40vh",
@@ -67,26 +65,23 @@ const PerfilAssis: React.FC = () => {
               }}
             >
               <Typography variant="h3" color={"#fff"}>
-                Assis Junior
+                {user?.name}
               </Typography>
               <Typography variant="body1" mt={1} color={"#fff"}>
-                36 anos | assis@mail.com
+                {user?.age} anos | {user?.email}
               </Typography>
               <Divider sx={{ marginTop: 2 }} color={"#fff"} />
               <Typography variant="body1" mt={1} color={"#fff"}>
-                Aluno da 12ª edição do curso de Desenvolvimento Web Fullstack da
-                Growdev
+                {user?.description}
               </Typography>
               <Typography variant="body1" mt={1} color={"#fff"}>
-                Stack: Fullstack
+                Stack: {user?.stack}
               </Typography>
               <Typography variant="body1" mt={1} color={"#fff"}>
-                HardSkills: HTML, CSS, Javascript, Typescript, Bootstrap, React,
-                Redux, NodeJs, Express
+                HardSkills: {user?.hardSkills.join(', ')}
               </Typography>
               <Typography variant="body1" mt={1} color={"#fff"}>
-                SoftSkills: Trabalha bem em equipe, Gosta de aprender, Focado na
-                tarefa
+                SoftSkills: {user?.softSkills.join(', ')}
               </Typography>
             </Paper>
           </Grid>

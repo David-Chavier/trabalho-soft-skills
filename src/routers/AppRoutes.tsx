@@ -5,8 +5,6 @@ import PerfilAssis from "../pages/PerfilAssis";
 import PerfilDavid from "../pages/PerfilDavid";
 import PerfilVitor from "../pages/PerfilVitor";
 import PerfilPablo from "../pages/PerfilPablo";
-import DefaultLayout from "../config/layout/DefaultLayout";
-// import DefaultLayout from "../config/layout/DefaultLayout";
 
 const AppRoutes: React.FC = () => {
   return (
