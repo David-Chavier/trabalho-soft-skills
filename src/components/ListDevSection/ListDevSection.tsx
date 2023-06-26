@@ -18,7 +18,7 @@ const ListDevSection: React.FC<ListDevSectionProps> = ({ title, subTitle }) => {
         <React.Fragment key={d.id}>
           <MediaCard
             title={d.name}
-            description={d.description}
+            description={d.description[0]}
             image={d.foto}
             altImage={d.name}
             btnTitle="Ver Perfil"
@@ -33,8 +33,6 @@ const ListDevSection: React.FC<ListDevSectionProps> = ({ title, subTitle }) => {
     <React.Fragment>
       <Grid container spacing={2} alignItems={"center"}>
         <Grid item xs={12}>
-          {/* <Title4 text={title}/>
-        <SubTitle1 text={subTitle}/> */}
           <Box sx={{ display: "flex", flexDirection: "row" }}>{listDevs}</Box>
         </Grid>
       </Grid>

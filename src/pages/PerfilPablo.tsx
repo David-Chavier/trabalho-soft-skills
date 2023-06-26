@@ -12,7 +12,7 @@ import MenuAppBar from "../components/AppBar/AppBar";
 import { devs } from "../database/devs";
 
 const PerfilPablo: React.FC = () => {
-  const user = devs.find(dev => dev.name === 'Pablo');
+  const user = devs.find((dev) => dev.name === "Pablo");
   return (
     <React.Fragment>
       <MenuAppBar GetIcons={<ReturnButton />} />
@@ -24,8 +24,7 @@ const PerfilPablo: React.FC = () => {
               elevation={2}
               sx={{
                 height: 300,
-                backgroundImage:
-                  `url(${user?.banner})`,
+                backgroundImage: `url(${user?.banner})`,
                 backgroundPosition: "center",
                 backgroundSize: "cover",
               }}
@@ -75,10 +74,10 @@ const PerfilPablo: React.FC = () => {
                 Stack: {user?.stack}
               </Typography>
               <Typography variant="body1" mt={1} color={"#fff"}>
-                HardSkills: {user?.hardSkills.join(', ')}
+                HardSkills: {user?.hardSkills.join(", ")}
               </Typography>
               <Typography variant="body1" mt={1} color={"#fff"}>
-                SoftSkills: {user?.softSkills.join(', ')}
+                SoftSkills: {user?.softSkills.join(", ")}
               </Typography>
             </Paper>
           </Grid>

@@ -12,7 +12,7 @@ import MenuAppBar from "../components/AppBar/AppBar";
 import { devs } from "../database/devs";
 
 const PerfilVitor: React.FC = () => {
-  const user = devs.find(dev => dev.name === 'Vitor');
+  const user = devs.find((dev) => dev.name === "Vitor");
   return (
     <React.Fragment>
       <Grid item xs={12}>
@@ -25,8 +25,7 @@ const PerfilVitor: React.FC = () => {
               elevation={2}
               sx={{
                 height: 300,
-                backgroundImage:
-                  `url(${user?.banner})`,
+                backgroundImage: `url(${user?.banner})`,
                 backgroundPosition: "center",
                 backgroundSize: "cover",
               }}
@@ -76,10 +75,10 @@ const PerfilVitor: React.FC = () => {
                 Stack: {user?.stack}
               </Typography>
               <Typography variant="body1" mt={1} color={"#fff"}>
-                HardSkills: {user?.hardSkills.join(', ')}
+                HardSkills: {user?.hardSkills.join(", ")}
               </Typography>
               <Typography variant="body1" mt={1} color={"#fff"}>
-                SoftSkills: {user?.softSkills.join(', ')}
+                SoftSkills: {user?.softSkills.join(", ")}
               </Typography>
             </Paper>
           </Grid>

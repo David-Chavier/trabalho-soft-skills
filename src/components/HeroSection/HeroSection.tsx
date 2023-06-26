@@ -22,8 +22,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ title, subTitle }) => {
               height: "15em",
               borderRadius: "5px",
               backgroundImage:
-                "url(https://giphy.com/embed/NPlFVAXWIiJDGfGSDW)",
-
+                "url(https://media.giphy.com/media/NPlFVAXWIiJDGfGSDW/giphy.gif)",
               backgroundPosition: "center",
               backgroundSize: "cover",
             }}
